@@ -25,17 +25,6 @@ template<class T> using pqg = priority_queue<T,vector<T>,greater<T>>;
 #define pb push_back
 #define all(x) (x).begin(), (x).end()
 #define rev(x) (x).rbegin(), (x).rend()
- 
-string dbg_function; int dbg_line;
-template<typename A, typename B> ostream& operator<<(ostream &os, const pair<A, B> &p) { return os << '(' << p.first << ", " << p.second << ')'; }
-template<typename T_container, typename T = typename enable_if<!is_same<T_container, string>::value, typename T_container::value_type>::type> ostream& operator<<(ostream &os, const T_container &v) {os << '{'; string sep; for (const T &x : v) os << sep << x, sep = ", "; return os << '}'; }
-void err(istream_iterator<string> it) {}
-template<typename T, typename... Args> void err(istream_iterator<string> it, T a, Args... args) { cerr << "\033[1;31m" << dbg_function << ":" << dbg_line << " -> \033[1;33m" << *it << " = " << a << "\033[0m" << ln; err(++it, args...);}
-#ifdef LOCAL
-	#define dbg(args...) { dbg_function = __func__; dbg_line = __LINE__; string _s = #args; replace(_s.begin(), _s.end(), ',', ' '); stringstream _ss(_s); istream_iterator<string> _it(_ss); err(_it, args); }
-#else
-  	#define dbg(...) 42
-#endif
 
 int lg2(int i) {return 31 - __builtin_clz(i);}
 int lg2(ll i) {return 63 - __builtin_clzll(i);}
