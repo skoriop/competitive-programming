@@ -17,8 +17,6 @@ typedef vector<vpii> vvpii;
 typedef vector<vpll> vvpll;
 typedef map<int, int> mii;
 typedef map<ll, ll> mll;
-typedef multiset<int> msi;
-typedef multiset<ll> msll;
 template <class T>
 using pq = priority_queue<T>;
 template <class T>
@@ -49,7 +47,7 @@ void err(istream_iterator<string> it) {}
 template <typename T, typename... Args>
 void err(istream_iterator<string> it, T a, Args... args)
 {
-	cerr << "\033[0;31m" << dbg_function << ":" << dbg_line << " -> \033[0;33m" << *it << " = " << a << "\033[0m" << ln;
+	cerr << "\033[0;31m" << dbg_function << ":" << dbg_line << " -> \033[0;33m" << *it << " = " << a << "\033[0m\n";
 	err(++it, args...);
 }
 #ifdef LOCAL
@@ -116,8 +114,8 @@ void solve()
 
 int main()
 {
-	fastio;
 	// cout << fixed << setprecision(10);
+	fastio;
 	ll t = 1;
 	cin >> t;
 	for (int i = 1; i <= t; i++)
