@@ -108,6 +108,34 @@ const int dx[4] = {1, 0, -1, 0};
 const int dy[4] = {0, 1, 0, -1};
 const ll MOD = 1000000007;
 
+// const ll N = 1000000;
+// vmint fact, invfact;
+// vll spf(N+1);
+// vll primes;
+
+void precomp()
+{
+	// fact.assign(N+1, 1);
+	// invfact.assign(N+1, 1);
+	// fact[0] = 1;
+	// for (int i = 1; i <= N; i++)
+	//     fact[i] = fact[i - 1] * i;
+	// invfact[N] = fact[N].inv();
+	// for (int i = N - 1; i >= 0; i--)
+	//     invfact[i] = invfact[i + 1] * (i + 1);
+
+	// for (int i = 2; i <= N; i++)
+	// {
+	// 		if (spf[i] == 0)
+	// 		{
+	// 			spf[i] = i;
+	// 			primes.pb(i);
+	// 		}
+	// 		for (int j = 0; j < primes.size() && primes[j] <= spf[i] && i * primes[j] <= N; j++)
+	//     		spf[i * primes[j]] = primes[j];
+	// }
+}
+
 void solve()
 {
 }
@@ -115,6 +143,7 @@ void solve()
 int main()
 {
 	// cout << fixed << setprecision(10);
+	precomp();
 	fastio;
 	ll t = 1;
 	cin >> t;
