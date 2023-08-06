@@ -3,20 +3,19 @@
 using namespace std;
 
 template <class T>
-struct segtree
+class SegmentTree
 {
+public:
     ll n;
     vector<T> st;
     T(*merge)
     (T, T);
-    T def;
+    T identity;
 
-    segtree(ll _n, vector<T> arr, T _def, T (*_merge)(T, T))
+    SegmentTree(ll _n, vector<T> arr, T identity, T (*merge)(T, T)) : identity(identity), merge(merge)
     {
         n = 1 << (lg2(_n) + !!(_n & (_n - 1)));
-        def = _def;
-        merge = _merge;
-        st.resize(2 * n, def);
+        st.resize(2 * n, identity);
         for (int i = 0; i < n; i++)
         {
             st[n + i] = arr[i];
@@ -26,7 +25,7 @@ struct segtree
 
     T query(ll l, ll r)
     {
-        T ra = def, rb = def;
+        T ra = identity, rb = identity;
         for (l += n, r += n; l <= r; l >>= 1, r >>= 1)
         {
             if (l & 1)
